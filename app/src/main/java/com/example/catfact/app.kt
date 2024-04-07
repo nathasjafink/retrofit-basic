@@ -1,4 +1,4 @@
-package com.example.retro
+package com.example.catfact
 
 suspend fun main() {
     val instance = RetrofitInstance()

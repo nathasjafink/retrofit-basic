@@ -1,4 +1,4 @@
-package com.example.retro
+package com.example.catfact
 
 import com.google.gson.annotations.SerializedName
 
