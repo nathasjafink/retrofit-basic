@@ -1,6 +1,7 @@
 package com.example.boredapi
 
 import retrofit2.http.GET
+import retrofit2.http.Query
 
 interface BoredApi {
     @GET("activity")
@@ -11,7 +12,8 @@ interface BoredApi {
     suspend fun getPrices(
     ): Price
 
-    @GET("activity?participants=1")
+    @GET("activity")
     suspend fun getParticipants(
+        @Query("participants") participants: Int
     ): Participants
 }
