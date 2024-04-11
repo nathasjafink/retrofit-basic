@@ -7,8 +7,8 @@ fun main() {
         val instance = RetrofitInstance()
         val activity = instance.apiService.getActivity()
         println(activity)
-        val price = instance.apiService.getPrices()
-        println(price)
+        //val price = instance.apiService.getPrices()
+        //println(price)
 
         /*
         Exercise B
@@ -48,27 +48,24 @@ If the response is successful print the activity
 
 If the response if not successful print "failure"
          */
-        print("Enter a min price: ")
-        val minPriceInput = readlnOrNull()
+        println("Enter a number for accessibility: ")
+        val accessibilityInput = readLine()
+        val accessibilityToInt = accessibilityInput?.toIntOrNull()
+
+        println("Enter a min price: ")
+        val minPriceInput = readLine()
         val minPriceToDouble = minPriceInput?.toIntOrNull()
 
-        print("Enter a max price: ")
-        val maxPriceInput = readlnOrNull()
+        println("Enter a max price: ")
+        val maxPriceInput = readLine()
         val maxPriceToDouble = maxPriceInput?.toIntOrNull()
 
-        if (minPriceInput != null && maxPriceInput != null) {
-            val price = minPriceToDouble?.let {
-                if (maxPriceToDouble != null) {
-                    instance.apiService.getTheInputtedMinMaxPrice(it,maxPriceToDouble)
-                }
-            }
-            if (price != null) {
-                println(price)
-            } else {
-                println("API call failed. Please try again later.")
-            }
+        if (minPriceToDouble != null && maxPriceToDouble != null && accessibilityToInt != null) {
+            // Make your API call here
+            val price = instance.apiService.getTheInputtedMinMaxPrice(minPriceToDouble,maxPriceToDouble,accessibilityToInt)
+            println("API response: $price")
         } else {
-            println("Invalid input. Please enter a valid number for min price and max price.")
+            println("Invalid input. Please enter valid numbers for min price, max price, and accessibility.")
         }
     }
 }
