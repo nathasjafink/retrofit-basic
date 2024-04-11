@@ -16,4 +16,7 @@ interface BoredApi {
     suspend fun getParticipants(
         @Query("participants") participants: Int
     ): Participants
+
+    @GET("activity")
+    suspend fun
 }

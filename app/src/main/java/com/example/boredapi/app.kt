@@ -32,5 +32,22 @@ The user inputs the parameters by standard input: readLine()
             println("Invalid input. Please enter a valid number of participants.")
         }
 
+        /*
+        Exercise C
+Without using the android framework (empty project - as seen in the reference project)
+
+Expand the project with another API call with parameters
+
+The program takes a specified accessibility in an inclusively constrained range of price (min / max price)
+
+The user inputs the parameters by standard input: readLine()
+
+Implement with a call instead of returning the Activity object
+
+If the response is successful print the activity
+
+If the response if not successful print "failure"
+         */
+
     }
 }

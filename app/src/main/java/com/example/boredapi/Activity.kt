@@ -22,3 +22,20 @@ data class Participants (
     @SerializedName("participants")
     val participants: Int
 )
+
+data class AllParameters (
+    @SerializedName("activity")
+    val activity: String,
+    @SerializedName("accesibility")
+    val accesibility: Int,
+    @SerializedName("type")
+    val type: String,
+    @SerializedName("participants")
+    val participants: Int,
+    @SerializedName("price")
+    val price: Int,
+    @SerializedName("link")
+    val link: String,
+    @SerializedName("key")
+    val key: String
+)
