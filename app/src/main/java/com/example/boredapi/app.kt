@@ -5,7 +5,11 @@ import kotlinx.coroutines.runBlocking
 fun main() {
     runBlocking {
         val instance = RetrofitInstance()
-        val fact = instance.apiService.getFact()
-        println(fact)
+        val activity = instance.apiService.getActivity()
+        println(activity)
+        val price = instance.apiService.getPrices()
+        println(price)
+        val participants = instance.apiService.getParticipants()
+        println(participants)
     }
 }
