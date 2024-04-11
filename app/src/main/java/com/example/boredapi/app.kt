@@ -49,20 +49,20 @@ If the response is successful print the activity
 If the response if not successful print "failure"
          */
         println("Enter a number for accessibility: ")
-        val accessibilityInput = readLine()
-        val accessibilityToInt = accessibilityInput?.toIntOrNull()
+        val accessibilityInput = readlnOrNull()
+        val accessibilityToInt = accessibilityInput?.toDoubleOrNull()
 
         println("Enter a min price: ")
         val minPriceInput = readLine()
-        val minPriceToDouble = minPriceInput?.toIntOrNull()
+        val minPriceToDouble = minPriceInput?.toDoubleOrNull()
 
         println("Enter a max price: ")
         val maxPriceInput = readLine()
-        val maxPriceToDouble = maxPriceInput?.toIntOrNull()
+        val maxPriceToDouble = maxPriceInput?.toDoubleOrNull()
 
         if (minPriceToDouble != null && maxPriceToDouble != null && accessibilityToInt != null) {
             // Make your API call here
-            val price = instance.apiService.getTheInputtedMinMaxPrice(minPriceToDouble,maxPriceToDouble,accessibilityToInt)
+            val price = instance.apiService.getTheInputtedMinMaxPrice(accessibilityToInt, minPriceToDouble, maxPriceToDouble)
             println("API response: $price")
         } else {
             println("Invalid input. Please enter valid numbers for min price, max price, and accessibility.")

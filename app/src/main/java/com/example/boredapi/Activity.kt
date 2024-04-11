@@ -33,7 +33,7 @@ data class AllParameters (
     @SerializedName("participants")
     val participants: Int,
     @SerializedName("price")
-    val price: Int,
+    val price: Double,
     @SerializedName("link")
     val link: String,
     @SerializedName("key")

@@ -17,10 +17,10 @@ interface BoredApi {
         @Query("participants") participants: Int
     ): Participants
 
-    @GET("activity?")
+    @GET("activity")
     suspend fun getTheInputtedMinMaxPrice(
-        @Query("accessibility") accessibility: Int,
-        @Query("minprice") minPrice: Int,
-        @Query("maxprice") maxPrice: Int
+        @Query("accessibility") accessibility: Double,
+        @Query("minprice") minPrice: Double,
+        @Query("maxprice") maxPrice: Double
     ) : AllParameters
 }
