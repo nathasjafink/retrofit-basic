@@ -1,7 +1,11 @@
 package com.example.catfact
 
-suspend fun main() {
-    val instance = RetrofitInstance()
-    val fact = instance.apiService.getFact()
-    println(fact)
+import kotlinx.coroutines.runBlocking
+
+fun main() {
+    runBlocking {
+        val instance = RetrofitInstance()
+        val fact = instance.apiService.getFact()
+        println(fact)
+    }
 }
