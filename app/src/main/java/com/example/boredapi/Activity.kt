@@ -26,8 +26,8 @@ data class Participants (
 data class AllParameters (
     @SerializedName("activity")
     val activity: String,
-    @SerializedName("accesibility")
-    val accesibility: Int,
+    @SerializedName("accessibility")
+    val accessibility: Double,
     @SerializedName("type")
     val type: String,
     @SerializedName("participants")

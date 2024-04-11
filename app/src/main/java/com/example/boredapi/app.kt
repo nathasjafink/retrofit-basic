@@ -48,6 +48,27 @@ If the response is successful print the activity
 
 If the response if not successful print "failure"
          */
+        print("Enter a min price: ")
+        val minPriceInput = readlnOrNull()
+        val minPriceToDouble = minPriceInput?.toIntOrNull()
 
+        print("Enter a max price: ")
+        val maxPriceInput = readlnOrNull()
+        val maxPriceToDouble = maxPriceInput?.toIntOrNull()
+
+        if (minPriceInput != null && maxPriceInput != null) {
+            val price = minPriceToDouble?.let {
+                if (maxPriceToDouble != null) {
+                    instance.apiService.getTheInputtedMinMaxPrice(it,maxPriceToDouble)
+                }
+            }
+            if (price != null) {
+                println(price)
+            } else {
+                println("API call failed. Please try again later.")
+            }
+        } else {
+            println("Invalid input. Please enter a valid number for min price and max price.")
+        }
     }
 }
